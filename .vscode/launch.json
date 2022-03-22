@@ -1,0 +1,45 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "stlink-debug",
+            "cwd": "${workspaceRoot}",
+            "executable": "${workspaceRoot}/build/nucleo.elf",
+            "request": "launch",
+            "type": "cortex-debug",
+            "servertype": "stutil",
+            "device": "STM32F746ZG",
+            "interface": "swd",
+            "preLaunchTask": "build",
+            "runToMain": true,
+        },
+
+        {
+            "name": "jlink-debug",
+            "cwd": "${workspaceRoot}",
+            "executable": "${workspaceRoot}/build/nucleo.elf",
+            "request": "launch",
+            "type": "cortex-debug",
+            "servertype": "jlink",
+            "device": "STM32F764ZG",
+            "interface": "swd",
+            "runToMain": true,
+            "preLaunchTask": "build",
+            /*"swoConfig": {
+                "enabled": true,
+                "cpuFrequency": 16000000,
+                "swoFrequency": 4000000,
+                "source": "probe",
+                "decoders": [
+                    {
+                        "label": "ITM port 0 output",
+                        "type": "console",
+                        "port": 0,
+                        "showOnStartup": true,
+                        "encoding": "ascii"
+                    }
+                ]
+            }*/
+        },
+    ]
+}
